@@ -71,12 +71,12 @@ docker-compose up -d
 
 docker exec -it laravel_app bash
 
-curl -sS https://getcomposer.org/installer | php
+<!-- curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
+composer create-project --prefer-dist laravel/laravel="9.\*" . -->
 
-composer create-project --prefer-dist laravel/laravel="9.\*" .
-
-php artisan --version
+docker exec -it laravel_app composer install
+docker exec -it laravel_app php artisan --version
 
 .env
 DB_CONNECTION=mysql
